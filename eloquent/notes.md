@@ -39,3 +39,23 @@ To try this out:
 - `$post = new Post;`
 - `$post->newQuery()->find(42);` now try
 - `$post->newQuery()->where('id', '=', 42)->first();`
+
+## 3 
+
+`Post::where()`
+
+_magic methods_ triggered automatically if a condition is met. If no static method of a given name exists in a class, but a `__callStatic` does, the `__callStatic` will catch that method call and fire a call to `__call` which makes a call to the builder class `where` method.
+
+a closure can be passed to the `where()` method in the builder class:
+
+```php
+Post::where(function($query) {
+    $query->where('foo', 'bar');
+});
+```
+
+an array can be passed as well:
+
+```php
+Post::where(['foo'=>'bar', 'baz' => 'biz'])->delete();
+```
