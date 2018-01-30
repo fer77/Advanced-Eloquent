@@ -59,3 +59,7 @@ an array can be passed as well:
 ```php
 Post::where(['foo'=>'bar', 'baz' => 'biz'])->delete();
 ```
+
+## 4
+
+how the query builder constructs SQL queries and passes them to PDO.
