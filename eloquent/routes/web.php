@@ -1,5 +1,7 @@
 <?php
 
+use App\Post;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +14,9 @@
 */
 
 Route::get('/', function () {
+    $posts = Post::where('id', '>=', 40)->get();
+
+    return $posts;
+    
     return view('welcome');
 });
