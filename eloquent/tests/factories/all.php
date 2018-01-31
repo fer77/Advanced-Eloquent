@@ -11,3 +11,8 @@ $factory('App\Post', [
     'title' => $faker->sentence,
     'body' => $faker->paragraph
 ]);
+
+$factory('App\Comment', [
+    'post_id' => 'factory:App\Post',
+    'body' => $faker->paragraph
+]);
