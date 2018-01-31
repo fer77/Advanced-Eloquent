@@ -63,3 +63,9 @@ Post::where(['foo'=>'bar', 'baz' => 'biz'])->delete();
 ## 4
 
 how the query builder constructs SQL queries and passes them to PDO.
+
+## 5
+
+**Eager Loading** 
+
+`Model` has a `with()` method -> gets sent to the `Builder` 
