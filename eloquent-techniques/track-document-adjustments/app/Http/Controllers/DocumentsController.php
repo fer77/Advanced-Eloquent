@@ -9,6 +9,6 @@ class DocumentsController extends Controller
 {
     public function show(Document $document)
     {
-        return $document;
+        return view('documents.show')->withDocument($document);
     }
 }
