@@ -8,9 +8,17 @@
 </head>
 <body>
     <h1>{{ $document->title }}</h1>
-    
+
     <div>
         <p>{{ $document->body }}</p>
     </div>
+
+    <hr>
+
+    <ul>
+        @foreach($document->adjustments as $user)
+        <li>{{ $user->email }} made a change {{ $user->pivot->updated_at->diffForHumans() }}</li>
+        @endforeach
+    </ul>
 </body>
 </html>
